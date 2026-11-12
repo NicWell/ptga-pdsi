@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+.ruff_cache/
+# IDE e ambiente
+.vscode/
+.idea/
+.env
+# Saídas geradas (diretórios mantidos pelo .gitkeep)
+resultados/*
+!resultados/.gitkeep
+# Imagens de teste locais e datasets grandes
+imagens/originais/*
+!imagens/originais/.gitkeep
+imagens/testes/*
+!imagens/testes/.gitkeep
+# Não ignorar AGENTS.md nem CONTEXTO_PROJETO.md
