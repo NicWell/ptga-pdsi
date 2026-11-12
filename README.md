@@ -47,6 +47,10 @@ O comando de alinhamento necessita duas imagens da mesma cena, com sobreposiçã
 
 ## Situação atual
 
+Os testes sintéticos cobrem transformações conhecidas, formatos cinza/BGR/BGRA
+nas operações básicas e alinhamento de translações conhecidas. Consulte a
+[metodologia e os limites dos testes](docs/TESTES_SINTETICOS.md).
+
 **Starter funcional**: operações geométricas e protótipo de alinhamento CLI; não há interface gráfica, dataset baixado, slides, relatório final ou métricas de avaliação completas. Não apresentar essas etapas como concluídas.
 
 ## Próximas entregas
