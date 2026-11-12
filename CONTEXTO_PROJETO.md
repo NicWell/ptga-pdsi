@@ -32,7 +32,7 @@ Mensagem compartilhada pelo integrante:
 
 > “Bom dia, pessoal! Espero que todos estejam bem. Para os que tiverem interesse, em anexo segue um relatório (**HDR_Relatorio.pdf**) de um dos projetos feitos em 2025.2. Ele contêm a descrição do problema, link para o github e também principais resultados. Lembrando que essa semana e a próxima são de acompanhamento, conforme link do doc em anexo. Quaisquer dúvidas me encontro à disposição. Até mais.”
 
-O integrante informou em **12/11/2026** que **houve a primeira parte das apresentações hoje**, mas seu grupo não foi selecionado; **o grupo participará do acompanhamento na semana seguinte**. A data exata não foi confirmada, portanto **não presumir 19/11 como data oficial**.
+O integrante informou em **12/11/2026** que **houve a primeira parte das apresentações hoje**, mas seu grupo não foi selecionado; **o grupo participará do acompanhamento na semana seguinte**. Inicialmente a data exata não estava confirmada. Posteriormente, o integrante confirmou **19/11/2026** como o dia do acompanhamento; o horário ainda não foi informado.
 
 ## 4. Relatório disponibilizado como exemplo (não é rubric/obrigação)
 
@@ -77,6 +77,11 @@ O integrante confirmou em **12/11/2026** que as responsabilidades abaixo foram a
 - **Wellington:** integração, GitHub, alinhamento automático.
 - Todos: discussão de alinhamento, testes e apresentações.
 
+O integrante esclareceu que essa divisão não limita a execução: o necessário
+para a entrega pode ser desenvolvido em qualquer área, inclusive pelo Codex,
+independentemente do responsável de referência. A prioridade é o acompanhamento
+em **19/11/2026**.
+
 O assistente propôs divisão das falas em aproximadamente quatro minutos para cada pessoa; **isso não foi confirmado como acordo da equipe**.
 
 ## 7. Plano sugerido para acompanhamento
@@ -89,7 +94,7 @@ Apresentar de 10 a 15 minutos:
 - Se possível, protótipo e limitações iniciais de alinhamento.
 - Próximas etapas e progresso no GitHub.
 
-O acompanhamento ocorre na **semana posterior a 12/11/2026**. Um roteiro proposto foi: organização e preparação (12–13/11), transformações básicas (14–15/11), alinhamento (16/11), evidências (17/11) e ensaio/slides (18/11). São **datas de planejamento**, não prazos anunciados pelo professor.
+O acompanhamento está confirmado pelo integrante para **19/11/2026**. Um roteiro proposto foi: organização e preparação (12–13/11), transformações básicas (14–15/11), alinhamento (16/11), evidências (17/11) e ensaio/slides (18/11). Essas etapas intermediárias são **datas de planejamento**, não prazos anunciados pelo professor.
 
 ## 8. Etapas após acompanhamento
 
@@ -108,3 +113,55 @@ O acompanhamento ocorre na **semana posterior a 12/11/2026**. Um roteiro propost
 ## 10. Próxima tarefa sugerida para o Codex
 
 > Leia `AGENTS.md`, `CONTEXTO_PROJETO.md` e `README.md`. Primeiro, confira os módulos e execute os testes. Em seguida, implemente uma rotina para gerar comparações visuais original/transformada; acrescente testes com transformações sintéticas conhecidas e documentação simples da metodologia. Preserve os requisitos do professor e não crie dependências de frontend/backend sem necessidade.
+
+## 11. Progresso após o pacote inicial
+
+- Ampliada a suíte de testes sintéticos de geometria e alinhamento por translação.
+- Implementado `python app.py demonstracao`: gera imagens sintéticas, comparações
+  das quatro operações, exemplo de alinhamento e registro de falha sem textura.
+- A demonstração salva medições do par sintético em `resumo.json`, sem generalizar
+  os resultados para cenas reais. Consulte `docs/DEMONSTRACAO.md`.
+- Permanecem pendentes slides, ensaio, validação com imagens reais e avaliação
+  experimental mais ampla; não há mudança nas exigências do professor.
+
+## 12. Ponto de parada e resumo para a equipe — 12/11/2026
+
+**O que temos:** CLI com as quatro transformações e protótipo ORB/RANSAC,
+95 testes passando e uma demonstração sintética reproduzível. Nenhuma tecnologia
+de interface ou serviço externo foi adicionada. As responsabilidades aceitas
+continuam como referência, com colaboração em todas as áreas autorizada.
+O acompanhamento foi confirmado para **19/11/2026**, sem horário informado.
+
+**Verificação realizada:** `python -m pytest -q` pela `.venv` — 95 testes
+passaram. `git diff --check` não apontou erros de espaços. O teste novo da CLI
+executa a demonstração em diretório temporário, verifica os painéis e recalcula
+o erro a partir dos PNGs salvos. Foram inspecionados visualmente os painéis de
+rotação, alinhamento e detalhes de interpolação.
+
+**Resultados locais:** `resultados/demonstracao/` contém 21 PNGs e `resumo.json`.
+Inclui original, saídas individuais, comparações, detalhe de interpolação,
+referência/móvel/alinhada e imagem sem textura. No par sintético de deslocamento
++12/-8 pixels, o MAE caiu de aproximadamente 40,39 para 1,97 na região comum.
+Esse resultado é apenas desse cenário; não é uma avaliação em imagens reais.
+
+**Como conferir:** na raiz, execute
+`.\.venv\Scripts\python.exe app.py demonstracao` e abra os arquivos
+`comparacao_*.png` em `resultados/demonstracao/`. Para repetir a verificação:
+`.\.venv\Scripts\python.exe -m pytest -q`.
+O guia completo está em `docs/DEMONSTRACAO.md`, e a metodologia dos testes
+em `docs/TESTES_SINTETICOS.md`.
+
+**Compartilhamento:** código e documentação devem ser versionados; as imagens
+geradas estão ignoradas pelo Git. Colegas podem reproduzi-las com o comando
+acima após instalar `requirements.txt`. A `.venv` também não é versionada.
+O Codex não fez commit ou push; no encerramento desta sessão ainda há alterações
+locais e arquivos novos da demonstração aguardando versionamento pelo integrante.
+
+**Próxima retomada:** escolher imagens próprias ou com licença documentada,
+validar exemplos reais e preparar slides/ensaio de 10–15 minutos. Também faltam
+testes de registro com rotação/perspectiva, validação de homografias degeneradas
+e parâmetros não finitos. A demonstração sintética está disponível; a apresentação
+e a validação experimental ampla ainda não estão concluídas.
+
+O integrante solicitou parar o desenvolvimento neste ponto; esta atualização
+é apenas documental para facilitar o compartilhamento e a retomada.

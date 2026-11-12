@@ -61,12 +61,17 @@ do limite de pontos do detector e formato de dois canais não suportado.
 
 ## Resultado e limites
 
-Em 12/11/2026: **94 testes passaram**, com Python 3.15.0, NumPy 2.5.4,
+Em 12/11/2026: **95 testes passaram**, com Python 3.15.0, NumPy 2.5.4,
 OpenCV 4.14.0 e pytest 9.2.0.
+
+A suíte inclui um teste da CLI `demonstracao`, executada em diretório temporário:
+verifica a geração dos painéis, a redução do erro no par sintético, a mensagem
+de falha sem textura registrada no JSON e a consistência do MAE com os PNGs salvos.
+O guia `DEMONSTRACAO.md` descreve as comparações visuais já disponíveis.
 
 Isso não valida alinhamento com rotação ou perspectiva, cenas reais, ausência
 de sobreposição, qualidade da homografia em casos degenerados ou desempenho.
-Também faltam testes da CLI, de parâmetros não finitos e de tipos de dados
+Também faltam testes dos subcomandos individuais da CLI, de parâmetros não finitos e de tipos de dados
 incompatíveis. Os testes de cubic verificam identidade e cor constante, sem
-comparação quantitativa em padrões variáveis. Não foram gerados slides,
-comparações visuais ou resultados sobre imagens reais nesta etapa.
+comparação quantitativa em padrões variáveis. Não foram gerados slides
+ou resultados sobre imagens reais nesta etapa.

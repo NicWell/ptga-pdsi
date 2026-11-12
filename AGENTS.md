@@ -22,4 +22,4 @@ Implementar e documentar o projeto acadêmico **Transformações Geométricas e 
 - `tests/`: cobrir parâmetros, formatos, casos limite e falhas de alinhamento.
 
 ## Prioridade
-Garantir protótipo demonstrável no acompanhamento na semana de 16–20/11/2026 (data exata não confirmada); depois qualidade experimental e documentação para entrega final.
+Garantir protótipo demonstrável no acompanhamento em **19/11/2026** (data confirmada pelo integrante); depois qualidade experimental e documentação para entrega final. Os papéis da equipe são referências de organização, não restrições: o integrante autorizou executar o necessário em todas as áreas para viabilizar a entrega.
