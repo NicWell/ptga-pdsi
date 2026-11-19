@@ -18,8 +18,15 @@ Implementar e documentar o projeto acadêmico **Transformações Geométricas e 
 ## Áreas sugeridas
 - `src/rotacao.py`, `src/translacao.py`, `src/espelhamento.py`, `src/redimensionamento.py`: geometria.
 - `src/alinhamento.py`: registro ORB/RANSAC e tratamento de erros.
+- `src/experimento_coco.py`: experimento local com as duas fotos descritas em `imagens/catalogo.json`; a suíte automatizada usa imagens sintéticas.
 - `app.py`: CLI inicial; futura interface opcional.
 - `tests/`: cobrir parâmetros, formatos, casos limite e falhas de alinhamento.
 
 ## Prioridade
 Garantir protótipo demonstrável no acompanhamento em **19/11/2026** (data confirmada pelo integrante); depois qualidade experimental e documentação para entrega final. Os papéis da equipe são referências de organização, não restrições: o integrante autorizou executar o necessário em todas as áreas para viabilizar a entrega.
+
+## Ponto de retomada
+
+- O guia do código em `output/pdf/guia-do-codigo-pdsi.pdf` inclui o experimento COCO val2014. É material de apoio local, ignorado pelo Git. Preserve autoria, fonte e licença ao documentar as fotos e as versões transformadas.
+- Diferencie os quatro alinhamentos com versões derivadas de cada foto do controle com cenas distintas. Consulte `imagens/README.md` para reproduzir e interpretar os resultados.
+- A pedido do integrante, adie a validação com duas capturas sobrepostas da mesma cena para uma próxima sessão, quando ele retomar a etapa. Tempo, erro de reprojeção e ampliação da suíte são melhorias propostas. Registre como concluído apenas o que for executado e verificado.

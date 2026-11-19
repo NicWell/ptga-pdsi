@@ -43,7 +43,18 @@ python app.py alinhamento --referencia caminho/para/ref.jpg --movel caminho/para
 python -m pytest -q
 ```
 
-O comando de alinhamento necessita duas imagens da mesma cena, com sobreposição e pontos característicos suficientes. Caso não haja correspondências adequadas, o script informa o erro. Ele ainda precisa de validação com dataset e experimentos; não é garantia de registro em todos os cenários.
+O comando de alinhamento necessita duas imagens da mesma cena, com sobreposição e pontos característicos suficientes. Caso não haja correspondências adequadas, o script informa o erro.
+
+Para reproduzir o experimento com duas fotografias do COCO val2014, coloque os
+originais indicados no [catálogo](imagens/catalogo.json) em `imagens/originais/`
+e execute:
+
+```powershell
+python -m src.experimento_coco
+```
+
+O comando gera os painéis e o resumo em `resultados/coco/`. Consulte os
+[resultados e o procedimento](imagens/README.md#reproduzir-o-teste-com-o-coco-val2014).
 
 ## Organização
 
@@ -61,14 +72,20 @@ Os testes sintéticos cobrem transformações conhecidas, formatos cinza/BGR/BGR
 nas operações básicas e alinhamento de translações conhecidas. Consulte a
 [metodologia e os limites dos testes](docs/TESTES_SINTETICOS.md).
 
-**Starter funcional**: operações geométricas e protótipo de alinhamento CLI; não há interface gráfica, dataset baixado, slides, relatório final ou métricas de avaliação completas. Não apresentar essas etapas como concluídas.
+**Protótipo funcional:** operações geométricas, alinhamento pela CLI,
+demonstração sintética e experimento local com duas amostras COCO val2014.
+Nos quatro pares controlados, o erro absoluto médio caiu após o alinhamento.
+O controle com cenas distintas foi rejeitado. A validação com duas capturas
+sobrepostas da mesma cena segue pendente.
+
+O guia do código atualizado com o experimento COCO fica localmente em
+`output/pdf/guia-do-codigo-pdsi.pdf`. O Git ignora esse diretório.
 
 ## Próximas entregas
 
-1. Escolher imagens do COCO ou de testes próprios, documentando fontes.
-2. Ampliar as comparações sintéticas já geradas para imagens reais.
-3. Ampliar os testes de alinhamento para rotação, perspectiva e cenas reais.
-4. Medir tempo e reprojeção com protocolo experimental; há MAE apenas do par sintético demonstrativo.
-5. Preparar apresentação de acompanhamento (10–15 min) e final (10–15 min).
+1. Retomar em outra sessão a avaliação de um par de capturas sobrepostas da mesma cena.
+2. Ampliar a suíte automatizada de alinhamento para rotação, perspectiva e homografias degeneradas.
+3. Medir tempo e erro de reprojeção com um procedimento reproduzível, como complemento ao MAE já registrado.
+4. Consolidar as evidências na apresentação final de 10–15 minutos e no repositório.
 
 Consulte [`CONTEXTO_PROJETO.md`](CONTEXTO_PROJETO.md) para decisões, integrantes, fontes e histórico, e [`AGENTS.md`](AGENTS.md) para orientar assistência por IA.

@@ -1,6 +1,6 @@
 # Contexto consolidado — Projeto de PDSI
 
-> Documento preparado para passar o histórico e decisões da equipe ao Codex. Atualizado em **12/11/2026**. Distingue fatos documentados, informações informadas pela equipe e recomendações do assistente. Não substitui os PDFs do professor.
+> Histórico e decisões da equipe, atualizado até a revisão do guia do código após o experimento COCO val2014. Distingue fatos documentados, informações da equipe e recomendações. As orientações oficiais constam nos materiais do professor.
 
 ## 1. Identificação
 
@@ -165,3 +165,37 @@ e a validação experimental ampla ainda não estão concluídas.
 
 O integrante solicitou parar o desenvolvimento neste ponto; esta atualização
 é apenas documental para facilitar o compartilhamento e a retomada.
+
+## 13. Retomada e experimento com o COCO val2014
+
+- A branch da demonstração foi integrada à `main`. A primeira versão do guia em
+  PDF descrevia o commit `7730a35`. A versão atual inclui o experimento com o
+  COCO e fica em `output/pdf/guia-do-codigo-pdsi.pdf`, ignorado pelo Git.
+- O banco local tem amostras sintéticas e duas fotos do COCO val2014 fornecidas
+  pelo integrante. O [catálogo](imagens/catalogo.json) registra a procedência.
+  Os arquivos de imagem e os resultados gerados ficam fora do Git.
+- O módulo `python -m src.experimento_coco` gera painéis das quatro
+  transformações e avalia quatro pares controlados de alinhamento, com rotação
+  ou perspectiva aplicada a cada original. O MAE caiu nos quatro casos. No
+  controle com cenas distintas, houve quatro correspondências após o filtro
+  inicial, abaixo do mínimo de dez. Os números e a reprodução estão no
+  [guia do banco local](imagens/README.md#reproduzir-o-teste-com-o-coco-val2014).
+- Permanecem pendentes a avaliação com capturas sobrepostas da mesma cena,
+  a ampliação da suíte automatizada de alinhamento e a avaliação de tempo e
+  reprojeção. A apresentação e o repositório são os entregáveis oficiais.
+
+## 14. Encerramento da etapa documental
+
+- O guia do código foi atualizado com o comando de reprodução, a metodologia,
+  o MAE dos quatro pares controlados, o controle de falha e os créditos.
+  Os resultados cobrem duas fotografias e versões derivadas por transformações
+  conhecidas. O catálogo registra autoria e licença de cada original.
+- O integrante decidiu retomar a validação com duas capturas independentes em
+  outra sessão. Quando a etapa for retomada, fotografar a mesma superfície
+  texturizada de dois ângulos próximos, preservar a sobreposição, catalogar as
+  fotos e executar a CLI com uma delas como referência. Comparar os detalhes na
+  região comum com uma sobreposição e registrar o resultado ou a falha.
+- Como propostas posteriores, medir reprojeção em pontos de controle marcados
+  independentemente das correspondências usadas pelo RANSAC, medir a mediana do
+  tempo do alinhamento com as imagens em memória e ampliar os casos sintéticos
+  automatizados de rotação, perspectiva e rejeição.

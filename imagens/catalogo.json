@@ -17,6 +17,36 @@
       "arquivo": "testes/sinteticas/sem_textura.png",
       "origem": "Array de pixels zero gerado em src/demonstracao.py",
       "uso": "Caso de falha esperada por falta de pontos característicos"
+    },
+    {
+      "id": "coco-val2014-19221",
+      "id_coco": 19221,
+      "arquivo": "originais/000000019221.jpg",
+      "descricao": "Brócolis",
+      "largura_px": 640,
+      "altura_px": 478,
+      "origem": "COCO 2014 Validation Images (val2014)",
+      "fonte": "https://cocodataset.org/#download",
+      "pagina_original": "https://www.flickr.com/photos/krijn/6237638989/",
+      "autoria": "Krijn Schuurman",
+      "licenca": "CC BY-NC-SA 2.0",
+      "url_licenca": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "uso": "Transformações geométricas, alinhamento controlado e caso de cenas distintas"
+    },
+    {
+      "id": "coco-val2014-44652",
+      "id_coco": 44652,
+      "arquivo": "originais/000000044652.jpg",
+      "descricao": "Avião",
+      "largura_px": 640,
+      "altura_px": 427,
+      "origem": "COCO 2014 Validation Images (val2014)",
+      "fonte": "https://cocodataset.org/#download",
+      "pagina_original": "https://www.flickr.com/photos/westm/5977306745/",
+      "autoria": "west.m",
+      "licenca": "CC BY-NC 2.0",
+      "url_licenca": "https://creativecommons.org/licenses/by-nc/2.0/",
+      "uso": "Transformações geométricas, alinhamento controlado e caso de cenas distintas"
     }
   ],
   "pares_alinhamento": [
@@ -29,6 +59,12 @@
       "referencia": "cena-sem-textura",
       "movel": "cena-sem-textura",
       "resultado_esperado": "Falha por pontos característicos insuficientes"
+    },
+    {
+      "referencia": "coco-val2014-19221",
+      "movel": "coco-val2014-44652",
+      "resultado_esperado": "Rejeição por ausência de cena comum",
+      "resultado_observado": "Rejeitado antes do RANSAC: 4 correspondências filtradas; mínimo de 10"
     }
   ]
 }
