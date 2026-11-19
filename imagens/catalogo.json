@@ -1,0 +1,34 @@
+{
+  "imagens": [
+    {
+      "id": "cena-sintetica",
+      "arquivo": "testes/sinteticas/original.png",
+      "origem": "Gerada pelo projeto em src/demonstracao.py com semente 2026",
+      "uso": "Entrada para as quatro transformações e referência para alinhamento"
+    },
+    {
+      "id": "cena-sintetica-deslocada",
+      "arquivo": "testes/sinteticas/movel.png",
+      "origem": "Derivada de cena-sintetica por deslocamento de +12 px em x e -8 px em y",
+      "uso": "Imagem móvel para validação do alinhamento com deslocamento conhecido"
+    },
+    {
+      "id": "cena-sem-textura",
+      "arquivo": "testes/sinteticas/sem_textura.png",
+      "origem": "Array de pixels zero gerado em src/demonstracao.py",
+      "uso": "Caso de falha esperada por falta de pontos característicos"
+    }
+  ],
+  "pares_alinhamento": [
+    {
+      "referencia": "cena-sintetica",
+      "movel": "cena-sintetica-deslocada",
+      "resultado_esperado": "Alinhamento bem-sucedido"
+    },
+    {
+      "referencia": "cena-sem-textura",
+      "movel": "cena-sem-textura",
+      "resultado_esperado": "Falha por pontos característicos insuficientes"
+    }
+  ]
+}

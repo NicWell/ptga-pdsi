@@ -13,6 +13,7 @@ venv/
 # Saídas geradas (diretórios mantidos pelo .gitkeep)
 resultados/*
 !resultados/.gitkeep
+/output/pdf/
 # Imagens de teste locais e datasets grandes
 imagens/originais/*
 !imagens/originais/.gitkeep

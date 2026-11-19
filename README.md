@@ -50,7 +50,7 @@ O comando de alinhamento necessita duas imagens da mesma cena, com sobreposiçã
 - `src/`: implementações reutilizáveis.
 - `app.py`: interface inicial por linha de comando (CLI).
 - `tests/`: testes automatizados sintéticos.
-- `imagens/`: amostras locais **não versionadas** por padrão; registrar origem/licença dos datasets.
+- `imagens/`: [banco local e catálogo de amostras](imagens/README.md); as mídias são **não versionadas** por padrão.
 - `resultados/`: saídas geradas, não versionadas.
 - `docs/`: contexto, metodologia e acompanhamento.
 - `AGENTS.md`: instruções de trabalho para o Codex.
