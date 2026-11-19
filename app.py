@@ -7,6 +7,7 @@ from src.translacao import transladar
 from src.espelhamento import espelhar
 from src.redimensionamento import redimensionar
 from src.alinhamento import alinhar
+from src.demonstracao import gerar_demonstracao
 
 
 def carregar(caminho: str):
@@ -19,6 +20,8 @@ def carregar(caminho: str):
 def main():
     parser = argparse.ArgumentParser(description="Transformações geométricas e alinhamento de imagens")
     sub = parser.add_subparsers(dest="operacao", required=True)
+    demo = sub.add_parser("demonstracao", help="Gera exemplos sintéticos e comparações visuais")
+    demo.add_argument("--destino", default="resultados/demonstracao")
     for nome in ("rotacao", "translacao", "espelhamento", "redimensionamento", "alinhamento"):
         p = sub.add_parser(nome)
         p.add_argument("--saida", required=True)
@@ -38,6 +41,12 @@ def main():
             p.add_argument("--interpolacao", choices=["nearest", "linear", "cubic", "area"], default="linear")
     args = parser.parse_args()
     try:
+        if args.operacao == "demonstracao":
+            resumo = gerar_demonstracao(args.destino)
+            print(f"Demonstração salva em: {args.destino}")
+            print(f"MAE sintético antes/depois: {resumo['mae_antes']:.2f} / {resumo['mae_depois']:.2f}")
+            print(f"Falha esperada sem textura: {resumo['falha_sem_textura']}")
+            return
         if args.operacao == "alinhamento":
             resultado = alinhar(carregar(args.referencia), carregar(args.movel))
         else:

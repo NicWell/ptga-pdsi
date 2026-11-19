@@ -24,6 +24,16 @@ Se a política de execução impedir a ativação, use diretamente ` .\.venv\Scr
 
 ## Execução
 
+Para gerar todos os exemplos sintéticos e comparações sem baixar imagens:
+
+```powershell
+python app.py demonstracao
+```
+
+Abra os painéis `comparacao_*.png` em `resultados/demonstracao/`.
+O [guia da demonstração](docs/DEMONSTRACAO.md) explica o conteúdo e as limitações.
+O acompanhamento foi confirmado pelo integrante para **19/11/2026**.
+
 ```powershell
 python app.py rotacao --entrada caminho/para/imagem.jpg --angulo 30 --saida resultados/rotacionada.png
 python app.py translacao --entrada caminho/para/imagem.jpg --dx 80 --dy 30 --saida resultados/transladada.png
@@ -47,14 +57,18 @@ O comando de alinhamento necessita duas imagens da mesma cena, com sobreposiçã
 
 ## Situação atual
 
+Os testes sintéticos cobrem transformações conhecidas, formatos cinza/BGR/BGRA
+nas operações básicas e alinhamento de translações conhecidas. Consulte a
+[metodologia e os limites dos testes](docs/TESTES_SINTETICOS.md).
+
 **Starter funcional**: operações geométricas e protótipo de alinhamento CLI; não há interface gráfica, dataset baixado, slides, relatório final ou métricas de avaliação completas. Não apresentar essas etapas como concluídas.
 
 ## Próximas entregas
 
 1. Escolher imagens do COCO ou de testes próprios, documentando fontes.
-2. Verificar saídas visualmente e salvar comparações lado a lado.
-3. Testar alinhamento em transformações conhecidas e reportar falhas.
-4. Medir tempo, reprojeção/erros com critérios explicitados.
+2. Ampliar as comparações sintéticas já geradas para imagens reais.
+3. Ampliar os testes de alinhamento para rotação, perspectiva e cenas reais.
+4. Medir tempo e reprojeção com protocolo experimental; há MAE apenas do par sintético demonstrativo.
 5. Preparar apresentação de acompanhamento (10–15 min) e final (10–15 min).
 
 Consulte [`CONTEXTO_PROJETO.md`](CONTEXTO_PROJETO.md) para decisões, integrantes, fontes e histórico, e [`AGENTS.md`](AGENTS.md) para orientar assistência por IA.

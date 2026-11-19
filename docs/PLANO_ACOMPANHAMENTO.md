@@ -1,6 +1,17 @@
 # Plano — acompanhamento PDSI
 
-**Período esperado:** semana após 12/11/2026. Dia e horário exatos não foram fornecidos.
+**Data confirmada pelo integrante:** 19/11/2026. Horário ainda não informado.
+
+As responsabilidades de referência foram aceitas, mas o desenvolvimento pode
+avançar em qualquer área para garantir a entrega. A divisão de falas abaixo
+continua sendo uma sugestão, separada das responsabilidades técnicas.
+
+## Demonstração disponível
+
+Execute `python app.py demonstracao` e abra os painéis em
+`resultados/demonstracao/`. Consulte `DEMONSTRACAO.md` para o roteiro de execução.
+As evidências abaixo já podem ser geradas sinteticamente; imagens reais,
+slides e ensaio ainda precisam ser preparados.
 
 ## Roteiro de apresentação (12 minutos — sugestão)
 
